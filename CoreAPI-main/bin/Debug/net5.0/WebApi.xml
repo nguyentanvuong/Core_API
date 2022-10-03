@@ -1,0 +1,841 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:WebApi.Controllers.APIController">
+            <summary>
+            List API that using General (Using for all module)
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.APIController.GetWorkingDate">
+            <summary>
+            Get Working date of O9System
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.APIController.Ripple(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Testing API. Response all that this API Receive
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.APIController.PMT_GRMB(WebApi.Models.Transaction.PMT.SDRFile)">
+            <summary>
+            Generate remittance via mobile banking
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="T:WebApi.Controllers.AuthController">
+            <summary>
+            API Authenticate
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.AuthController.Authenticate(WebApi.Models.LoginRequest)">
+            <summary>
+            Login to O9Core Banking System
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.AuthController.MultiAuthenticate(WebApi.Models.MultiLoginRequest)">
+            <summary>
+            Multi Login to O9Core Banking System
+            </summary>
+        </member>
+        <member name="T:WebApi.Controllers.FASTController">
+            <summary>
+            List API for FAST
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.FastBank">
+            <summary>
+            Get list of bank join into FAST NBC
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.TransactionOutgoing(WebApi.Models.PagingRequest)">
+            <summary>
+            Get list FAST outgoing transaction
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.TransactionIncoming(WebApi.Models.PagingRequest)">
+            <summary>
+            Get list FAST incoming transaction
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.GetTransactionById(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Get FAST transaction by id
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.GetLogsubtransByIpctransid(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Get transaction details by transid
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.FastBankView(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Get fast bank by bankid
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.FaskBankModify(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Modify FAST bank
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.FaskBankAdd(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Add FAST Bank
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.FastBankDelete(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Delete FAST bank by bankid
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.VerifyAccount(WebApi.Models.FAST.FASTVerifyAccountRequest)">
+            <summary>
+            FAST Verify Account
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.MakeFullFundTransfer(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            FAST make Full Fund Transfer
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.FASTAccountInquiry">
+            <summary>
+            FAST Account Inquiry
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.FASTIncomingTransaction(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Pull Incoming Transaction from FAST
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.FASTOutgingTransactionByPmtInfId(WebApi.Models.FAST.GetOutgoingTransactionByPmtInfIdRequest)">
+            <summary>
+            FAST get Outgoing Transaction by PmtInfId
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.ReverseTransaction(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            FAST Reverse Transaction
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.FASTAcknowledgement(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            FAST Make Acknowledgement
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.SyncOutgoingTran(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Sync FAST Outgoing transaction from O9Core
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.GetFastAccount">
+            <summary>
+            Get List FAST Account from NBC
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.SyncIncomingTranToO9(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Sync FAST incoming transaction from O9Core
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.FASTController.SyncTransStatusToO9(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Sync transaction status to O9Core
+            </summary>
+        </member>
+        <member name="T:WebApi.Controllers.FASTPublicController">
+            <summary>
+            List API public for NBC
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.FASTPublicController.FASTLogin(WebApi.Models.FASTPublic.PublicLoginRequest)">
+            <summary>
+            Login
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.FASTPublicController.FASTAccountInquiry(WebApi.Models.FASTPublic.AccountInquiryRequest)">
+            <summary>
+            Customer Account Inquiry 
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="T:WebApi.Controllers.IPCController">
+            <summary>
+            API for IPC service
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.IPCController.ListSchedule">
+            <summary>
+            Get list schedule information
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.IPCController.ViewSchedule(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            View schedule information
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.IPCController.ModifySchedule(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Modify schedule
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.IPCController.AddSchedule(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Add schedule
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.IPCController.FastBankDelete(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Delete schedule
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="T:WebApi.Controllers.ReportController">
+            <summary>
+            API for report service
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.ReportController.GetListReport">
+            <summary>
+            Get list report
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.ReportController.GetReportToken(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Get report token
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="T:WebApi.Controllers.SystemController">
+            <summary>
+            API for system management
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.SystemCode">
+            <summary>
+            Get list system code
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.SearchFunction">
+            <summary>
+            Get list search function
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.GetForm">
+            <summary>
+            Get list form
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.GetMenu(System.String)">
+            <summary>
+            Get list menu
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.ListBank">
+            <summary>
+            Get List System bank
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.BankAdd(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Add System bank
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.BankModify(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Modify System bank
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.ViewBank(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            View System bank
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.DeleteBank(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Delete System bank
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.LookupData(WebApi.Models.System.LookupDataRequest)">
+            <summary>
+            Look up data
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.GetInforData(WebApi.Models.System.GetInforDataRequest)">
+            <summary>
+            Get infor data
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.GetMenuInvokeByRoleid(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Get Menu Invoke By Roleid
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.UpdateMenuInvoke(WebApi.Models.System.ListRoleInvoke)">
+            <summary>
+            Update List Menu Invoke
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.GetReportForDashboardPage">
+            <summary>
+            Get Report For Dashboard Page
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.GetListRoleDetail">
+            <summary>
+            Get List Role Detail
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.RoleDetailRequest(WebApi.Models.System.AddRoleDetailRequest)">
+            <summary>
+            Get List Role Detail
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.GetMenuInvoke">
+            <summary>
+            Get Menu Invoke By Roleid
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.SwitchModeFAST">
+            <summary>
+            Switch Mode FAST
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.GetAllUserByRoleID(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Switch Mode FAST
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.DeleteRoleDetail(WebApi.Models.System.AddRoleDetailRequest)">
+            <summary>
+            Switch Mode FAST
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.ListParameter">
+            <summary>
+            Get List Parameter
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.AddParameter(WebApi.Models.System.AddParam)">
+            <summary>
+            Add System parameter
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.ModifyParameter(WebApi.Models.System.AddParam)">
+            <summary>
+            Modify System Parameter
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.ViewParameter(WebApi.Models.System.ViewParam)">
+            <summary>
+            View System parameter
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.DeleteParameter(WebApi.Models.System.ViewParam)">
+            <summary>
+            Delete System parameter
+            </summary>
+            <response code = "400" > Bad Request</response>
+            <response code = "401" > Unauthorized </response >
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.ListSystemCode">
+            <summary>
+            Get List System code
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.ViewSystemCode(WebApi.Models.System.ViewSystemCode)">
+            <summary>
+            View System system code
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.AddSystemCode(WebApi.Models.System.AddSystemCode)">
+            <summary>
+            Add System system code
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.ModifySystemCode(WebApi.Models.System.AddSystemCode)">
+            <summary>
+            Modify System system code
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.SystemController.DeleteSystemCode(WebApi.Models.System.ViewSystemCode)">
+            <summary>
+            Delete System system code
+            </summary>
+            <response code = "400" > Bad Request</response>
+            <response code = "401" > Unauthorized </response >
+        </member>
+        <member name="T:WebApi.Controllers.UserController">
+            <summary>
+            API for user management
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.Login(WebApi.Models.User.UserLoginRequest)">
+            <summary>
+            Login User Web
+            </summary>
+            <response code="400">Bad Request</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.ListUser">
+            <summary>
+            Get List User Web
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.ListPolicy">
+            <summary>
+            Get List Policy
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.ListUserRole">
+            <summary>
+            Get List User Role
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.ChangePassword(WebApi.Models.User.ChangePasswordRequest)">
+            <summary>
+            Change password user Web
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.AddUser(WebApi.Models.User.AddUserRequest)">
+            <summary>
+            Add new user Web
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.ResetPassword(WebApi.Models.User.ResetPasswordRequest)">
+            <summary>
+            Reset password user Web
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.ModifyUser(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Modify user Web
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.ViewUser(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            View user Web
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.DeleteUser(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Delete user Web
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.ViewPolicy(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            View user policy
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.InsertPolicy(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Insert user policy
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.ModifyPolicy(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Modify user policy
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.DeletePolicy(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Delete user policy
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.ViewUserRole(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            View User Role
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.InsertUserRole(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Insert User Role
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.ModifyUserRole(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Modify User Role
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.DeleteUserRole(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Delete User Role
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:WebApi.Helpers.DatabaseUtils.DbFactory.GetDbConnection">
+            <summary>
+             Lấy đối tượng kết nối đến cơ sở dữ liệu
+            </summary>
+        </member>
+        <member name="M:WebApi.Helpers.DatabaseUtils.DbFactory.GetDataTableFromStoredProcedure(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+             Thực hiện câu truy vấn trả về 1 bảng dữ liệu dạng JArray bằng cách gọi SP
+            </summary>
+        </member>
+        <member name="M:WebApi.Helpers.DatabaseUtils.DbFactory.GetDataTableFromSQL(System.String)">
+            <summary>
+             Thực hiện câu truy vấn trả về 1 bảng dữ liệu dạng JArray bằng câu lệnh SQL
+            </summary>
+        </member>
+        <member name="M:WebApi.Helpers.DatabaseUtils.DbFactory.GetVariableFromSQL(System.String)">
+            <summary>
+             Thực hiện câu truy vấn trả về 1 biến bằng câu lệnh SQL
+            </summary>
+        </member>
+        <member name="M:WebApi.Helpers.DatabaseUtils.DbFactory.GetVariableFromStoredProcedure(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+             Thực hiện câu truy vấn trả về 1 biến dữ liệu bằng cách gọi SP
+            </summary>
+        </member>
+        <member name="M:WebApi.Helpers.DatabaseUtils.DbUtils.GenerateWhereSQLCondition(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+             Tạo câu điều kiện lọc dữ liệu SQL
+            </summary>
+        </member>
+        <member name="M:WebApi.Helpers.DatabaseUtils.DbUtils.GenerateWhereConditionLinq(Newtonsoft.Json.Linq.JObject,System.String)">
+            <summary>
+             Tạo câu điều kiện lọc dữ liệu LINQ
+            </summary>
+        </member>
+        <member name="M:WebApi.Helpers.Services.EncryptMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            1：RSA giải mã dữ liệu trong phương pháp Body in the Post
+            2：Mã hóa dữ liệu trả về bằng RSA
+            </summary>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.RSAUtilEncrypt.GetRSAKey(System.String)">
+            <summary>
+            Get RSA Key from path of pem file
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.RSAUtilEncrypt.Encrypt(System.String,Org.BouncyCastle.Crypto.Parameters.RsaKeyParameters)">
+            <summary>
+            Encrypt with public RSA Key
+            </summary>
+            <param name="data"></param>
+            <param name="publicKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.RSAUtilEncrypt.Encrypt(System.String,System.String)">
+            <summary>
+            Encrypt with path of pem file
+            </summary>
+            <param name="data"></param>
+            <param name="pathPublicKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.RSAUtilEncrypt.Decrypt(System.String,Org.BouncyCastle.Crypto.Parameters.RsaKeyParameters)">
+            <summary>
+            Decrypt with priavte RSA Key
+            </summary>
+            <param name="data"></param>
+            <param name="privateKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.RSAUtilEncrypt.Decrypt(System.String,System.String)">
+            <summary>
+            Decrypt with path of pem file
+            </summary>
+            <param name="data"></param>
+            <param name="pathPrivateKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.RSAUtilEncrypt.SignData(System.String,Org.BouncyCastle.Crypto.Parameters.RsaKeyParameters)">
+            <summary>
+            Sign data with private RSA Key
+            </summary>
+            <param name="data"></param>
+            <param name="signPrivateKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.RSAUtilEncrypt.SignData(System.String,System.String)">
+            <summary>
+            Sign data with path of pem file
+            </summary>
+            <param name="data"></param>
+            <param name="pathSignPrivateKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.RSAUtilEncrypt.Verify(System.String,System.String,Org.BouncyCastle.Crypto.Parameters.RsaKeyParameters)">
+            <summary>
+            Verify signature with plain text and public sign key
+            </summary>
+            <param name="plainText"></param>
+            <param name="signature"></param>
+            <param name="signPublicKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.RSAUtilEncrypt.Verify(System.String,System.String,System.String)">
+            <summary>
+            Verify signature with plain text and path of pem file
+            </summary>
+            <param name="plainText"></param>
+            <param name="signature"></param>
+            <param name="pathSignPublicKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.RSAUtilEncrypt.Verify(System.String,Org.BouncyCastle.Crypto.Parameters.RsaKeyParameters,System.String,Org.BouncyCastle.Crypto.Parameters.RsaKeyParameters)">
+            <summary>
+            Verify signature with cipher text, private decrypt key and public sign key
+            </summary>
+            <param name="ciphertext"></param>
+            <param name="privateKey"></param>
+            <param name="signature"></param>
+            <param name="signPublicKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.RSAUtilEncrypt.Verify(System.String,Org.BouncyCastle.Crypto.Parameters.RsaKeyParameters,System.String,System.String)">
+            <summary>
+            Verify signature with cipher text, private decrypt key and path of the public signing key's pem file
+            </summary>
+            <param name="ciphertext"></param>
+            <param name="privateKey"></param>
+            <param name="signature"></param>
+            <param name="pathSignPublicKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.RSAUtilEncrypt.Verify(System.String,System.String,System.String,Org.BouncyCastle.Crypto.Parameters.RsaKeyParameters)">
+            <summary>
+            Verify signature with cipher text, path of the public decrypt key's pem file and public sign key 
+            </summary>
+            <param name="ciphertext"></param>
+            <param name="pathPrivateKey"></param>
+            <param name="signature"></param>
+            <param name="signPublicKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.RSAUtilEncrypt.Verify(System.String,System.String,System.String,System.String)">
+            <summary>
+            Verify signature with cipher text, path of the public decrypt key's pem file and path of the public signing key's pem file
+            </summary>
+            <param name="ciphertext"></param>
+            <param name="pathPrivateKey"></param>
+            <param name="signature"></param>
+            <param name="pathSignPublicKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.Utility.MakeCaptalizeCase(System.String)">
+             <summary>
+            Sửa chuỗi theo format Captalize
+             </summary>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.Utility.SetValueObject(Newtonsoft.Json.Linq.JObject,System.Object)">
+             <summary>
+            Lấy dữ liệu từ JObject đưa vào Entity
+             </summary>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.Utility.FromatJObject(System.Object,System.String[])">
+             <summary>
+            Format lại JOject để trả kết quả
+             </summary>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.Utility.GetValueJObjectByKey(Newtonsoft.Json.Linq.JObject,System.String)">
+             <summary>
+            Lấy giá trị của phần tử trong JObject
+             </summary>
+        </member>
+        <member name="M:WebApi.Helpers.Utils.Utility.GetInstance(System.String)">
+            <summary>
+            Tạo 1 object mới từ tên của nó
+            </summary>
+            <param name="strFullyQualifiedName"></param>
+            <returns>object</returns>
+        </member>
+        <member name="P:WebApi.Models.LoginRequest.Username">
+            <summary>
+            Username to login O9Core
+            </summary>
+            <example>ac01</example>
+        </member>
+        <member name="P:WebApi.Models.LoginRequest.Password">
+            <summary>
+            Password of user to login
+            </summary>
+            <example>123456</example>
+        </member>
+        <member name="P:WebApi.Models.LoginRequest.encrypt">
+            <summary>
+            Password is encrypt or not. If you send plain password => set this to "false" 
+            </summary>
+            <example>ac01</example>
+        </member>
+        <member name="P:WebApi.Models.TransactionRequest.SESSIONID">
+            <summary>
+            Session ID when user login to O9Core System. User must login to have this session ID
+            </summary>
+            <example>00000178-6dd0-7723-0000-01786dd0772c</example>
+        </member>
+        <member name="P:WebApi.Models.TransactionRequest.DESCS">
+            <summary>
+            Description of transaction
+            </summary>
+            <example>Description Follow Trans</example>
+        </member>
+        <member name="P:WebApi.Models.User.ChangePasswordRequest.username">
+            <summary>
+            username of user to change password
+            </summary>
+            <example>ac01</example>
+        </member>
+        <member name="P:WebApi.Models.User.ChangePasswordRequest.oldpass">
+            <summary>
+            Current password of user
+            </summary>
+            <example>123456</example>
+        </member>
+        <member name="P:WebApi.Models.User.ChangePasswordRequest.newpass">
+            <summary>
+            New password of user
+            </summary>
+            <example>456789</example>
+        </member>
+        <member name="P:WebApi.Models.User.ChangePasswordRequest.encrypt">
+            <summary>
+            Password is encrypt or not. If you send plain password => set this to "false" 
+            </summary>
+            <example>ac01</example>
+        </member>
+        <member name="P:WebApi.Models.User.UserLoginRequest.password">
+            <summary>
+            Password of user to login
+            </summary>
+            <example>123456</example>
+        </member>
+        <member name="P:WebApi.Models.User.UserLoginRequest.encrypt">
+            <summary>
+            Password is encrypt or not. If you send plain password => set this to "false" 
+            </summary>
+            <example>ac01</example>
+        </member>
+        <member name="M:WebApi.Reports.CustomReportStorageWebExtension.GetData(System.String)">
+            <summary>
+            Trả về report layout tương ứng với url hợp lệ
+            </summary>
+            <param name="url"></param>
+            <returns>byte[]</returns>
+        </member>
+        <member name="M:WebApi.Services.ReportService.BindDataReport(DevExpress.XtraReports.UI.XtraReport,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Set data source và các parameter cho report
+            </summary>
+            <param name="report"></param>
+            <param name="reportParams"></param>
+            <returns>XtraReport</returns>
+        </member>
+    </members>
+</doc>
